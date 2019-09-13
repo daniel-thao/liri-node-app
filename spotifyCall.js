@@ -57,13 +57,19 @@ const SpotifyCall = function () {
             }
 
             // Push the preview url
-            songInfo.push(response.preview_url);
+            if(response.preview_url === null) {
+                songInfo.push("Preview is Not Avaliable");
+            }
+            else {songInfo.push(response.preview_url);}
 
             // push the album name
             songInfo.push(response.album.name);
 
             // THIS IS FOR ME
             console.log(songInfo);
+
+            // This is the ASSINGMENT?
+            console.log(dividerTop + songInfo.join("\n\n") + dividerBot);
 
             fs.appendFile("random.txt", dividerTop + songInfo.join("\n\n") + dividerBot, function (error) {
                 // If the code experiences any errors it will log the error to the console.

@@ -14,37 +14,78 @@ const inquirer = require("inquirer");
 // This is the export to the spotify js
 const SpotifyCall = require("./spotifyCall.js");
 
+// This is the export for the OMDB
+const MovieChoice = require("./OMDB.js");
+
+
 
 
 inquirer
-    .prompt([
-        {
-            name: "search",
-            message: "What are you searching for?",
-            type: "list",
-            choices: ["Song", "Movie", "Current Music Tours"]
-        },
-    ]).then(function (answer) {
-        secondQuestion(answer);
-    })
+.prompt([
+    {
+        name: "search",
+        message: "What are you searching for?",
+        type: "list",
+        choices: ["Song", "Movie", "Current Music Tours"]
+    },
+]).then(function (answer) {
+    secondQuestion(answer);
+})
+
+
 
 function secondQuestion(answer) {
     if (answer.search === "Song") {
         inquirer
-            .prompt([
-                {
-                    name: "whatSong",
-                    message: "What song are you searching for?"
-                },
-            ]).then(function (answer) {
-                const song = answer.whatSong
-                const spotify = new SpotifyCall();
+        .prompt([
+            {
+                name: "whatSong",
+                message: "What song are you searching for?"
+            },
+        ]).then(function (answer) {
+            const song = answer.whatSong
+            const spotify = new SpotifyCall();
+
+            if(song === "") {
+                spotify.findSongByTrack("ISIS")
+            }
+            else{           
                 spotify.findSongByTrack(song);
                 console.log(song);
-            })
+            }
+
+
+        })
+    }
+
+    if(answer.search === "Movie") {
+        inquirer
+        .prompt([
+            {
+                name: "whatMovie",
+                message: "What movie are you searching for?"
+            },
+        ]).then(function (answer) {
+            const movie = answer.whatMovie
+            const OMDB = new SpotifyCall();
+
+            if(movie === "") {
+                OMDB.findMovie("Inception")
+            }
+            else{           
+                spotify.findMovie(movie);
+                console.log(movie);
+            }
+        })
     }
     // console.log(answer.search)
 }
+
+// ===========================================================================================================================
+// ===========================================================================================================================
+
+ 
+
 
 
 

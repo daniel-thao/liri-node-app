@@ -58,6 +58,9 @@ function secondQuestion(answer) {
         })
     }
 
+
+    // =========================================
+    // =========================================
     if(answer.search === "Movie") {
         inquirer
         .prompt([
@@ -67,13 +70,13 @@ function secondQuestion(answer) {
             },
         ]).then(function (answer) {
             const movie = answer.whatMovie
-            const OMDB = new SpotifyCall();
+            const OMDB = new MovieChoice();
 
             if(movie === "") {
                 OMDB.findMovie("Inception")
             }
             else{           
-                spotify.findMovie(movie);
+                OMDB.findMovie(movie);
                 console.log(movie);
             }
         })

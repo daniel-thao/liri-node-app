@@ -11,11 +11,22 @@ const MovieChoice = function() {
   this.findMovie = function(movie) {
     const API = "trilogy"
     // let movie = "inception"
-    const URL = "http://www.omdbapi.com/?apikey=" + API + "&?t=" + movie;
+    const URL = "http://www.omdbapi.com/?t=" + movie + "&apikey=" + API;
+    // "https://www.omdbapi.com/?t=romancing+the+stone&y=&plot=short&apikey=trilogy"
+
+    // console.log("\n\n\n" + URL + "\n\n\n");
 
     axios.get(URL).then(function(response) {
       // Place the response.data into a variable, jsonData.
-        console.log(response);
+        // if(error) {
+        //     console.log(error);
+        //     console.log("\n\n\n\n\n YEAH IDK IF THIS IS ACTUALLY BEING PRINTED TOO \n\n\n\n\n");
+        // }
+        // else {
+        //     console.log(response);
+        // }
+        const data = response.data
+        console.log(data);
  
 
     //   // Append showData and the divider to log.txt, print showData to the console

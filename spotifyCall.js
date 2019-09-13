@@ -2,6 +2,9 @@
 const nodeSpotify = require("node-spotify-api");
 // Had to move this from the liri.js file because it wasn't being called over there
 const keys = require("./keys.js");
+// Same with this, had to move the file System thing over here because of it being used here.
+const fs = require("fs");
+
 
 
 // ===========================================================================================================================

@@ -5,7 +5,7 @@ require("dotenv").config();
 // // This is used to ge the information from Spotify
 // const nodeSpotify = require("node-spotify-api");
 // This is to get the information from the File System
-const fs = require("fs");
+// const fs = require("fs");
 
 // This gets the info for Inquirer
 const inquirer = require("inquirer");

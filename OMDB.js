@@ -26,7 +26,48 @@ const MovieChoice = function() {
         //     console.log(response);
         // }
         const data = response.data
-        console.log(data);
+        // console.log(data);
+
+        function output(argument){
+            return "\n" + argument + "\n";
+        }
+
+        const movieInfo = [];
+        const rottenTRating = [];
+
+        rottenTRating.push(data.Ratings[1].Source, data.Ratings[1].Value);
+
+        movieInfo.push(
+            data.Title,
+            data.Year,
+            data.imdbRating, 
+            rottenTRating.join(", "),
+            data.Country,
+            data.Language,
+            data.Plot,
+            data.Actors 
+        );
+
+        console.log(dividerTop + movieInfo.join("\n") + dividerBot);
+        // console.log(data.Title);
+        // console.log(data.Year);
+        // console.log(data.imdbRating);
+        // console.log(data.Ratings[1].Source);
+        // console.log(data.Ratings[1].Value);
+        // console.log(data.Country);
+        // console.log(data.Language);
+        // console.log(data.Plot);
+        // console.log(data.Actors);
+
+
+        // * Title of the movie.
+        // * Year the movie came out.
+        // * IMDB Rating of the movie.
+        // * Rotten Tomatoes Rating of the movie.
+        // * Country where the movie was produced.
+        // * Language of the movie.
+        // * Plot of the movie.
+        // * Actors in the movie.
  
 
     //   // Append showData and the divider to log.txt, print showData to the console

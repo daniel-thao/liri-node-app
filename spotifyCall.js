@@ -66,7 +66,7 @@ const SpotifyCall = function () {
             songInfo.push(response.album.name);
 
             // THIS IS FOR ME
-            console.log(songInfo);
+            // console.log(songInfo);
 
             // This is the ASSINGMENT?
             console.log(dividerTop + songInfo.join("\n\n") + dividerBot);

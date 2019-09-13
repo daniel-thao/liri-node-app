@@ -38,14 +38,14 @@ const MovieChoice = function() {
         rottenTRating.push(data.Ratings[1].Source, data.Ratings[1].Value);
 
         movieInfo.push(
-            data.Title,
-            data.Year,
-            data.imdbRating, 
-            rottenTRating.join(", "),
-            data.Country,
-            data.Language,
-            data.Plot,
-            data.Actors 
+            "Title: " + data.Title,
+            "Year: " + data.Year,
+            "IMDB Rating: " + data.imdbRating, 
+            "Rotten Tomatoes Rating: " + rottenTRating.join(", "),
+            "Country of Production: " + data.Country,
+            "Language: " + data.Language,
+            "Short Summary: " + data.Plot,
+            "Main Actors: " + data.Actors 
         );
 
         console.log(dividerTop + movieInfo.join("\n") + dividerBot);

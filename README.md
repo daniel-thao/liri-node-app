@@ -26,4 +26,22 @@ In here we are using the technologies of:
     <li>Moment.js's NPM</li>
     <li>OMDB's API</li>
 </ul>
+<br>
+<br>
+<ol>
+    <li>Inquirer<br>
+    This is used to record the input of the user using node as an interface between the scripts and the user
+    </li>
+    <li>Axios<br>
+        <ul>
+            <li>This is being used in replacement of fetch</li>
+            <li>Used to grab the user specific information from the Bands in Town API</li>
+            <li>Used to grab the user specific information from OMDB's API</li>
+        </ul>
+    </li>
+    <li>Spotify's NPM<br>
+    Information is given back to the user after they have inputted which song they would like to look up<br>
+    </li>
+</ol>
+
 

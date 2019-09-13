@@ -71,15 +71,15 @@ const SpotifyCall = function () {
             // This is the ASSINGMENT?
             console.log(dividerTop + songInfo.join("\n\n") + dividerBot);
 
-            fs.appendFile("random.txt", dividerTop + songInfo.join("\n\n") + dividerBot, function (error) {
-                // If the code experiences any errors it will log the error to the console.
-                if (error) {
-                    return console.log(error);
-                }
+            // fs.appendFile("random.txt", dividerTop + songInfo.join("\n\n") + dividerBot, function (error) {
+            //     // If the code experiences any errors it will log the error to the console.
+            //     if (error) {
+            //         return console.log(error);
+            //     }
 
-                // Otherwise, it will print: "movies.txt was updated!"
-                console.log("random.txt was updated!");
-            });
+            //     // Otherwise, it will print: "movies.txt was updated!"
+            //     console.log("random.txt was updated!");
+            // });
         })
 
     };

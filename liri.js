@@ -5,7 +5,7 @@ require("dotenv").config();
 // // This is used to ge the information from Spotify
 // const nodeSpotify = require("node-spotify-api");
 // This is to get the information from the File System
-// const fs = require("fs");
+const fs = require("fs");
 
 // This gets the info for Inquirer
 const inquirer = require("inquirer");
@@ -24,117 +24,135 @@ const ArtistChoice = require("./bandsInTown.js");
 
 
 inquirer
-.prompt([
-    {
-        name: "search",
-        message: "What are you searching for?",
-        type: "list",
-        choices: ["Song", "Movie", "Current Music Tours, Nothing"]
-    },
-]).then(function (answer) {
-    secondQuestion(answer);
-})
+    .prompt([
+        {
+            name: "search",
+            message: "What are you searching for?",
+            type: "list",
+            choices: ["Song", "Movie", "Current Music Tours", "Nothing"]
+        },
+    ]).then(function (answer) {
+        secondQuestion(answer);
+    })
 
 
 
 function secondQuestion(answer) {
     if (answer.search === "Song") {
         inquirer
-        .prompt([
-            {
-                name: "whatSong",
-                message: "What song are you searching for?"
-            },
-        ]).then(function (answer) {
-            const song = answer.whatSong
-            const spotify = new SpotifyCall();
+            .prompt([
+                {
+                    name: "whatSong",
+                    message: "What song are you searching for?"
+                },
+            ]).then(function (answer) {
+                const song = answer.whatSong
+                const spotify = new SpotifyCall();
 
-            if(song === "") {
-                spotify.findSongByTrack("ISIS")
-            }
-            else{           
-                spotify.findSongByTrack(song);
-                console.log(song);
-            }
+                if (song === "") {
+                    spotify.findSongByTrack("ISIS")
+                }
+                else {
+                    spotify.findSongByTrack(song);
+                    console.log(song);
+                }
 
 
-        })
+            })
     }
 
 
     // =========================================
     // =========================================
-    if(answer.search === "Movie") {
+    if (answer.search === "Movie") {
         inquirer
-        .prompt([
-            {
-                name: "whatMovie",
-                message: "What movie are you searching for?"
-            },
-        ]).then(function (answer) {
-            const movie = answer.whatMovie
-            const OMDB = new MovieChoice();
+            .prompt([
+                {
+                    name: "whatMovie",
+                    message: "What movie are you searching for?"
+                },
+            ]).then(function (answer) {
+                const movie = answer.whatMovie
+                const OMDB = new MovieChoice();
 
-            if(movie === "") {
-                OMDB.findMovie("Inception")
-            }
-            else{           
-                OMDB.findMovie(movie);
-                console.log(movie);
-            }
-        })
+                if (movie === "") {
+                    OMDB.findMovie("Inception")
+                }
+                else {
+                    OMDB.findMovie(movie);
+                    console.log(movie);
+                }
+            })
     }
 
 
     // =========================================
     // =========================================
-    if(answer.search === "Current Music Tours") {
+    if (answer.search === "Current Music Tours") {
         inquirer
-        .prompt([
-            {
-                name: "whatTour",
-                message: "What artist tour are you searching for?"
-            },
-        ]).then(function (answer) {
-            const artist = answer.whatTour
-            const tour = new ArtistChoice();
+            .prompt([
+                {
+                    name: "whatTour",
+                    message: "What artist tour are you searching for?"
+                },
+            ]).then(function (answer) {
+                const artist = answer.whatTour
+                const tour = new ArtistChoice();
 
-            if(artist === "") {
-                tour.findTour("Post Malone")
-            }
-            else{           
-                tour.findTour(artist);
-                console.log(artist);
-            }
-        })
+                if (artist === "") {
+                    tour.findTour("Post Malone")
+                }
+                else {
+                    tour.findTour(artist);
+                    console.log(artist);
+                }
+            })
     }
 
 
 
     // =========================================
     // =========================================
-    if(answer.search === "Nothing") {
-        console.log("HA. HA. HA. HA. Just Kidding, I hacked your computer instead")
+    if (answer.search === "Nothing") {
+        // console.log("HA. HA. HA. HA. Just Kidding, I hacked your computer instead")
 
-        const intervalID = setInterval(jokeInterval, 100)
-        console.log("HA. HA. HA. HA. Just Kidding, I hacked your computer instead")
-
-
-        function jokeInterval() {
-            const spotify = new SpotifyCall();
+        // const intervalID = setInterval(jokeInterval(), 1000)
+        // console.log("HA. HA. HA. HA. Just Kidding, I hacked your computer instead #ISIS");
+        let counter = 0
 
 
+        const joke = function () {
+            if (counter < 71 === true) {
+                setTimeout(function () {
+                    fs.readFile("random.txt", "utf8", function (error, song) {
+                        if (error) {
+                            return console.log(error);
+                        }
+
+                        console.log("HA. HA. HA. HA. SOO ANNOYING, I hacked your computer instead #ISIS");
+
+
+                        const spotify = new SpotifyCall();
+                        spotify.findSongByTrack(song);
+                    })
+                    counter++;
+                    joke();
+                }, 500)
+            }
         }
+        joke();
 
-        setTimeout(clearInterval(intervalID), 3000);
+
+        // setTimeout(function() {
+        //     clearInterval(intervalID);
+        // }, 3000);
     }
-
 }
 
 // ===========================================================================================================================
 // ===========================================================================================================================
 
- 
+
 
 
 

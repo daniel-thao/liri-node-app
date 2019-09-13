@@ -29,7 +29,7 @@ inquirer
         name: "search",
         message: "What are you searching for?",
         type: "list",
-        choices: ["Song", "Movie", "Current Music Tours"]
+        choices: ["Song", "Movie", "Current Music Tours, Nothing"]
     },
 ]).then(function (answer) {
     secondQuestion(answer);
@@ -108,7 +108,27 @@ function secondQuestion(answer) {
             }
         })
     }
-    // console.log(answer.search)
+
+
+
+    // =========================================
+    // =========================================
+    if(answer.search === "Nothing") {
+        console.log("HA. HA. HA. HA. Just Kidding, I hacked your computer instead")
+
+        const intervalID = setInterval(jokeInterval, 100)
+        console.log("HA. HA. HA. HA. Just Kidding, I hacked your computer instead")
+
+
+        function jokeInterval() {
+            const spotify = new SpotifyCall();
+
+
+        }
+
+        setTimeout(clearInterval(intervalID), 3000);
+    }
+
 }
 
 // ===========================================================================================================================

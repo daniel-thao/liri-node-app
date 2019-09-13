@@ -19,21 +19,31 @@ const SpotifyCall = require("./spotifyCall.js");
 inquirer
     .prompt([
         {
-        name: "search",
-        message: "What are you searching for?",
-        type: "list",
-        choices: ["Song", "Movie", "Current Music Tours" ]
+            name: "search",
+            message: "What are you searching for?",
+            type: "list",
+            choices: ["Song", "Movie", "Current Music Tours"]
         },
-    ]).then(function(answer) {
+    ]).then(function (answer) {
         secondQuestion(answer);
     })
 
 function secondQuestion(answer) {
-    if(answer.search === "Song") {
-        const spotify = new SpotifyCall(answer.search);
-        spotify.findSongByTrack("Homicide");
+    if (answer.search === "Song") {
+        inquirer
+            .prompt([
+                {
+                    name: "whatSong",
+                    message: "What song are you searching for?"
+                },
+            ]).then(function (answer) {
+                const song = answer.whatSong
+                const spotify = new SpotifyCall();
+                spotify.findSongByTrack(song);
+                console.log(song);
+            })
     }
-    console.log(answer.search)
+    // console.log(answer.search)
 }
 
 

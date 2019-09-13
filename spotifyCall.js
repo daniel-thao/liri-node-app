@@ -73,7 +73,6 @@ const SpotifyCall = function () {
 
                 // Otherwise, it will print: "movies.txt was updated!"
                 console.log("random.txt was updated!");
-
             });
         })
 

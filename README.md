@@ -58,7 +58,9 @@ In here we are using the technologies of:
             <li>Current Music Tours</li>
             <li>Nothing</li>
         </ol>
-    <li>If you choose Song, you will be presented with a question of what song you would like to view</li>
+    <li>If you choose Song, you will be presented with a question of what song you would like to view
+    <img src="assets/Vid1.gif">
+    </li>
     <li>If you choose Movie, you will be asked to input what movie you're looking for</li>
     <li>If you chose Current Music Tour, you will be asked to input an artist</li>
     <br>

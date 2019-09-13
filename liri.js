@@ -17,6 +17,9 @@ const SpotifyCall = require("./spotifyCall.js");
 // This is the export for the OMDB
 const MovieChoice = require("./OMDB.js");
 
+// This is the export for the Bands in Town
+const ArtistChoice = require("./bandsInTown.js");
+
 
 
 
@@ -78,6 +81,30 @@ function secondQuestion(answer) {
             else{           
                 OMDB.findMovie(movie);
                 console.log(movie);
+            }
+        })
+    }
+
+
+    // =========================================
+    // =========================================
+    if(answer.search === "Current Music Tours") {
+        inquirer
+        .prompt([
+            {
+                name: "whatTour",
+                message: "What artist tour are you searching for?"
+            },
+        ]).then(function (answer) {
+            const artist = answer.whatTour
+            const tour = new ArtistChoice();
+
+            if(artist === "") {
+                tour.findTour("Post Malone")
+            }
+            else{           
+                tour.findTour(artist);
+                console.log(artist);
             }
         })
     }

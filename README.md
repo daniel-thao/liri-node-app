@@ -59,15 +59,40 @@ In here we are using the technologies of:
             <li>Nothing</li>
         </ol>
     <li>If you choose Song, you will be presented with a question of what song you would like to view
-    <img src="assets/Vid1.gif">
+        <br>
+        <ol>
+            <li>If you choose nothing, then you will be given a default song
+                <img src="assets/Vid1.gif"><br><br></li>
+            <li>This is what happens when you input a song title
+            <img src="assets/Vid1.1.gif"><br><br></li>
+        </ol>
     </li>
     <li>If you choose Movie, you will be asked to input what movie you're looking for</li>
+        <br>
+        <ol>
+            <li>If you choose nothing, then you will be given a default movie
+                <img src="assets/Vid2.gif"><br><br></li>
+            <li>This is what happens when you input a movie title
+            <img src="assets/Vid2.1.gif"><br><br></li>
+        </ol>
     <li>If you chose Current Music Tour, you will be asked to input an artist</li>
+        <br>
+        <ol>
+            <li>If you choose nothing, then you will be given a default artist's concert tour schedule
+                <img src="assets/Vid3.gif"><br><br></li>
+            <li>This is what happens when you input an artist
+            <img src="assets/Vid3.1.gif"><br><br></li>
+        </ol>
     <br>
     <li><h3>Place make sur eyour spelling is correct</h3></li>
     <br>
     <li>Finally if you choose to do nothing, your computer will subsequently crash, no recovery, super shutdown<br>
     I don't reccommend on choosing that option
+        <br>
+        <ol>
+            <li>If you choose nothing, then you will be given a default song
+                <img src="assets/Vid4.gif"><br><br></li>
+        </ol>
     </li>
 </ol>
 <br>

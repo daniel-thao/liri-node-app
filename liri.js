@@ -1,9 +1,9 @@
 // This is here so we need the .env file
 require("dotenv").config();
 // This is to access the key.js file
-const keys = require("./keys.js");
-// This is used to ge the information from Spotify
-const nodeSpotify = require("node-spotify-api");
+// const keys = require("./keys.js");
+// // This is used to ge the information from Spotify
+// const nodeSpotify = require("node-spotify-api");
 // This is to get the information from the File System
 const fs = require("fs");
 
@@ -12,7 +12,7 @@ const inquirer = require("inquirer");
 
 // =========================================
 // This is the export to the spotify js
-const spotifyCall = require("./spotifyCall.js");
+const SpotifyCall = require("./spotifyCall.js");
 
 
 
@@ -30,7 +30,7 @@ inquirer
 
 function secondQuestion(answer) {
     if(answer.search === "Song") {
-        const spotify = new Spotify(keys.spotify);
+        const spotify = new SpotifyCall(answer.search);
         spotify.findSongByTrack("Homicide");
     }
     console.log(answer.search)

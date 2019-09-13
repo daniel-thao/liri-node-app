@@ -1,3 +1,8 @@
+// This is used to ge the information from Spotify
+const nodeSpotify = require("node-spotify-api");
+// Had to move this from the liri.js file because it wasn't being called over there
+const keys = require("./keys.js");
+
 
 // ===========================================================================================================================
 // ===========================================================================================================================
@@ -6,7 +11,7 @@ const dividerBot = "\n===========================\n\n\n";
 
 
 
-const Spotify = function () {
+const SpotifyCall = function () {
     // findShow takes in the name of a tv show and searches the tvmaze API
     this.findSongByTrack = function (song) {
         const songSearch = new nodeSpotify(keys.spotify);
@@ -72,7 +77,7 @@ const Spotify = function () {
     };
 }
 
-module.exports = Spotify();
+module.exports = SpotifyCall;
 
 // const spotify = new Spotify(keys.spotify);
 // spotify.findSongByTrack("Zanies and Fools");

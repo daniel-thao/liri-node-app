@@ -89,15 +89,13 @@ In here we are using the technologies of:
     <li>Finally if you choose to do nothing, your computer will subsequently crash, no recovery, super shutdown<br>
     I don't reccommend on choosing that option
         <br>
-        <ol>
-            <li>If you choose nothing, then you will be given a default song
-                <img src="assets/Vid4.gif"><br><br></li>
-        </ol>
+        <img src="assets/Vid4.gif"><br><br></li>
     </li>
 </ol>
 <br>
 <br>
 <h6>Well that's the app<h6>
+<h4>I, Daniel Thao built the whole thing</h4>
 
 
 

@@ -24,9 +24,13 @@ const ArtistChoice = function() {
             venueLocation.push(data[i].venue.city, data[i].venue.region)
             tourEvents.push(data[i].venue.name, venueLocation.join(", "), moment(data[i].datetime).format("MM/DD/YYYY"));
 
+            if(artist === "Post Malone") {
+                console.log("\nPost Malone" + dividerTop + tourEvents.join("\n") + dividerBot);
+            }
+            else {
+                console.log("\n" + artist + dividerTop + tourEvents.join("\n") + dividerBot);
 
-            console.log(dividerTop + tourEvents.join("\n") + dividerBot);
-
+            }
         }
 
     });

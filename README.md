@@ -10,9 +10,10 @@
 6. Clearly list the technologies used in the app
 7. State your role in the app development
 
-So this is an app that takes in the user's input and spits out information based on what they wanted to know
+What if a user wanted to learn the artist's name of their favorite song? Then what if they wanted to find out if their favorite artist is coming into town? Finally, what if that artist is in movies as well?
 <br>
-In this case, it's finding information about songs, movies, and concert dates
+<br>
+WELL now there's a way to figure all of that out.
 <br>
 <br>
 <h1>Overview</h1>
@@ -43,5 +44,35 @@ In here we are using the technologies of:
     Information is given back to the user after they have inputted which song they would like to look up<br>
     </li>
 </ol>
+<br>
+<br>
+<h1>Run Through</h1>
+<ol>
+    <li>first clone the repo from <h6>https://github.com/daniel-thao/liri-node-app<</h6></li>
+    <li>Then open the program in your terminal by being in this directory <h6>liri-node-app/liri.js</h6></li>
+    <li>Then run node and the file</li>
+    <li>Once you run the application, You are presented with four choices</li>
+        <ol>
+            <li>Song</li>
+            <li>Movies</li>
+            <li>Current Music Tours</li>
+            <li>Nothing</li>
+        </ol>
+    <li>If you choose Song, you will be presented with a question of what song you would like to view</li>
+    <li>If you choose Movie, you will be asked to input what movie you're looking for</li>
+    <li>If you chose Current Music Tour, you will be asked to input an artist</li>
+    <br>
+    <li><h3>Place make sur eyour spelling is correct</h3></li>
+    <br>
+    <li>Finally if you choose to do nothing, your computer will subsequently crash, no recovery, super shutdown<br>
+    I don't reccommend on choosing that option
+    </li>
+</ol>
+<br>
+<br>
+<h6>Well that's the app<h6>
 
 
+
+
+            

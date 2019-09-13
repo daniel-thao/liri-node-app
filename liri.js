@@ -20,6 +20,7 @@ const MovieChoice = require("./OMDB.js");
 // This is the export for the Bands in Town
 const ArtistChoice = require("./bandsInTown.js");
 
+// console.log(process.argv);
 
 
 
